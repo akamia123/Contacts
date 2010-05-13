@@ -17,6 +17,10 @@ a{
 	color: #000;
 }
 
+a img{
+	border: none;
+}
+
 #header{
     background: url("/images/header3.png") repeat-x;
     border-bottom: 1px solid #000;
@@ -176,7 +180,7 @@ select{
 }
 
 *:first-child+html #pagination {
-    overflow: hidden; }
+    overflow: hidden;
 	
 }
 
