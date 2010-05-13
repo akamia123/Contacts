@@ -42,8 +42,10 @@
             <td><%= contact.job_title %></td>
         </tr>
     <% end %>
-    <%= will_paginate(@contacts) %>
 </table>
+<div id="pagination">
+    <%= will_paginate(@contacts) %>
+</div>
 <script type="text/javascript">
     function ChangeColor(tableRow, highLight)
     {
