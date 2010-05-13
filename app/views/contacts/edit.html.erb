@@ -1,0 +1,11 @@
+<h2>Edit Contact</h2>
+<hr>
+<% form_for :contact, :url => contact_url(@contact), :html => {:multipart => true, :method => :put} do |f| %>
+    <table>
+        <%= render :partial => "form", :locals => {:f => f}, @object => @contact %>
+        <tr>
+            <td></td>
+            <td><%= submit_tag "Update Contact" %></td>
+        </tr>
+    </table>
+<% end %>

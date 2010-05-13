@@ -1,0 +1,65 @@
+<% if @company.logo.exists? %>
+    <div style="float: right;">
+        <%= image_tag(@company.logo(:small))%>
+    </div>
+<% end %>
+<h2 style="display: inline;"><%= @company.name %></h2>
+<span>
+    <%= link_to image_tag("/images/edit.png"), edit_company_url(@company) %>
+</span>
+<span>
+    (<small class="<%= quote_color(@company.quote[1]) %>">
+        <%= "#{number_to_currency(@company.quote[0].to_f)}, #{@company.quote[1]}" %>
+    </small>)
+</span>
+<br />
+<small><%= "#{@company.city}, #{@company.state}" %></small>
+<p>
+    <%= @company.description %>
+</p>
+<p>
+    <strong>Tags: </strong>
+    <%= @company.tags.join(", ") %>
+</p>
+<hr>
+<h4>Contacts <%= link_to image_tag("/images/add.png"), new_company_contact_url(@company.id) %></h4>
+<table class="contact" cellspacing="0">
+    <tr>
+        <th>First Name</th>
+        <th>MI</th>
+        <th>Last Name</th>
+        <th>Nickname</th>
+        <th>Job Title</th>
+    </tr>
+    <% for contact in @company.contacts.by_user(@user.id) %>
+        <tr onmouseover="ChangeColor(this, true);"
+            onmouseout="ChangeColor(this, false);"
+            onclick="DoNav('<%= contact_url(contact.id) %>');">
+            <td><%= contact.first_name %></td>
+            <td><%= contact.mi %></td>
+            <td><%= contact.last_name %></td>
+            <td><%= contact.nickname %></td>
+            <td><%= contact.job_title %></td>
+        </tr>
+    <% end %>
+</table>
+<script type="text/javascript">
+    function ChangeColor(tableRow, highLight)
+    {
+        if (highLight)
+        {
+            tableRow.style.backgroundColor = '#c4def9';
+            tableRow.style.cursor = 'pointer';
+            tableRow.style.cursor = 'hand';
+        }
+        else
+        {
+            tableRow.style.backgroundColor = '#ffffff';
+        }
+    }
+
+  function DoNav(theUrl)
+  {
+      document.location.href = theUrl;
+  }
+</script>

@@ -1,0 +1,22 @@
+<h2>Add Phone Number for <%= "#{@contact.first_name} #{@contact.mi} #{@contact.last_name}"%></h2>
+<hr>
+<% form_for :telephone, :url => contact_telephone_url(@contact.id, @telephone.id), :html => {:method => :put} do |f| %>      
+    <table>
+        <tr>
+            <td>Phone Number: </td>
+            <td>    
+                <%= f.text_field :area_code, :value => area_code, :size => 3, :maxlength => 3 %>
+                <%= f.text_field :number1, :value => number1, :size => 3, :maxlength => 3 %>
+                <%= f.text_field :number2, :value => number2, :size => 4, :maxlength => 4 %>
+            </td>
+        </tr>
+        <tr>
+            <td>Phone Number Type: </td>
+            <td><%= f.select :phone_type, %w{Home Mobile Work Work\ Mobile} %></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><%= submit_tag "Add Phone Number" %></td>
+        </tr>
+    </table>
+<% end %>

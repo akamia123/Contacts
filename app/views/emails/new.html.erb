@@ -1,0 +1,16 @@
+<% form_for :email, :url => contact_emails_url(@contact.id), :html => {:method => :post} do |f| %>
+    <table>
+        <tr>
+            <td>Email Address: </td>
+            <td><%= f.text_field :email %></td>
+        </tr>
+        <tr>
+            <td>Email Type: </td>
+            <td><%= f.select :email_type, %w{Home School Work} %></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><%= submit_tag "Add Email Address" %></td>
+        </tr>
+    </table>
+<% end %>

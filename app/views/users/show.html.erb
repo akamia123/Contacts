@@ -1,0 +1,9 @@
+<h2><%= @user.first_name %> <%= @user.last_name %>'s Contacts</h2>
+<hr>
+<h4>Contact Skills Cloud</h4>
+<div id="tags">
+    <% tag_cloud(@contact_tags, %w(tag1 tag2 tag3 tag4)) do |tag, css_class| %>
+        <%= link_to tag.name, contacts_url(:tag => tag.name), :class => css_class %>
+    <% end %>
+</div>
+

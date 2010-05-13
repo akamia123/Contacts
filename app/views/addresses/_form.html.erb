@@ -1,0 +1,24 @@
+<tr>
+    <td>Address: </td>
+    <td><%= f.text_field :address1, :size => 15 %></td>
+</tr>
+<tr>
+    <td>Address 2: </td>
+    <td><%= f.text_field :address2, :size => 15 %></td>
+</tr>
+<tr>
+    <td>City: </td>
+    <td><%= f.text_field :city, :size => 15 %></td>
+</tr>
+<tr>
+    <td>State: </td>
+    <td><%= f.select :state, states %></td>
+</tr>
+<tr>
+    <td>Zip Code: </td>
+    <td><%= f.text_field :zip_code, :size => 5 %></td>
+</tr>
+<tr>
+    <td>Address Type: </td>
+    <td><%= f.select :address_type, %w{Home Work} %></td>
+</tr>

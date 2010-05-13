@@ -1,0 +1,9 @@
+<% form_for :address, :url => contact_addresses_url(@contact.id), :html => {:method => :post} do |f| %>
+    <table>
+        <%= render :partial => "form", :locals => {:f => f} %>
+        <tr>
+            <td></td>
+            <td><%= submit_tag "Add Address" %></td>
+        </tr>
+    </table>
+<% end %>

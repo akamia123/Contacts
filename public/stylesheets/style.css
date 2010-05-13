@@ -1,0 +1,205 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #eee;
+    font-family: verdana;
+}
+
+h1, h2, h3, h4{
+    margin: 2px 0;
+}
+
+hr{
+	margin: 5px;
+}
+
+a{
+	color: #000;
+}
+
+#header{
+    background: url("/images/header3.png") repeat-x;
+    border-bottom: 1px solid #000;
+    height: 50px;
+}
+
+#header_navbar{
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 15px;
+    width: 800px;
+}
+
+#header_navbar a{
+	color: #fff;
+	text-decoration: none;
+}
+
+#header_navbar a:hover{
+	color: #ddd;
+	text-decoration: underline;
+}
+
+#container{
+    height: 160px;
+    padding-top: 40px;
+    background: url("/images/content2.png") repeat-x;
+    border-bottom: 1px solid #ccc;
+}
+
+#content{
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    padding: 15px;
+    background-color: #fff;
+}
+
+#contact{
+	padding: 10px;
+	background-color: #eee;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+
+#company{
+	padding: 10px;
+	background-color: #eee;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+
+form{
+	font-size: 18px;
+}
+
+input{
+	margin: 5px;
+	font-size: 18px;
+}
+
+textarea{
+	margin: 5px;
+	font-size: 18px;
+}
+
+select{
+	font-size: 20px;
+}
+
+.stock_up{
+	color: #390;
+}
+
+.stock_down{
+	color: #F00;
+}
+
+.contact th{
+	background: url("/images/table_header.png") repeat-x;
+	height: 20px;
+	padding: 5px 15px;
+}
+
+.contact td{
+	text-align: center;
+	height: 20px;
+	padding: 5px 15px;
+	margin: 0;
+}
+
+.contact input{
+	font-size: 12px;
+}
+
+#pagination {
+	background: white;
+	/* self-clearing method: */ 
+	margin-bottom: 10px;
+}
+
+#pagination a, #pagination span {
+    padding: .2em .5em;
+    display: block;
+    float: left;
+    margin-right: 1px; 
+}
+
+#pagination span.disabled {
+    color: #999;
+    border: 1px solid #DDD; 
+}
+
+#pagination span.current {
+    font-weight: bold;
+    background: #2E6AB1;
+    color: white;
+    border: 1px solid #2E6AB1; 
+}
+#pagination a {
+    text-decoration: none;
+    color: #105CB6;
+    border: 1px solid #9AAFE5; 
+}
+#pagination a:hover, #pagination a:focus {
+      color: #003;
+      border-color: #003; 
+}
+
+#pagination .page_info {
+    background: #2E6AB1;
+    color: white;
+    padding: .4em .6em;
+    width: 22em;
+    margin-bottom: .3em;
+    text-align: center; 
+}
+
+#pagination .page_info b {
+      color: #003;
+      background: #6aa6ed;
+      padding: .1em .25em; 
+}
+
+#pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; 
+}
+
+* html #pagination {
+    height: 1%; 
+}
+
+*:first-child+html #pagination {
+    overflow: hidden; }
+	
+}
+
+.tag1 {
+	font-size: 12px;
+	color: #09C;
+}
+
+.tag2 {
+	font-size: 16px; 
+	color: #09C;
+}
+
+.tag3 {
+	font-size: 20px;
+	color: #09C;
+}
+
+.tag4 {
+	font-size: 24px;
+	color: #09C;
+}
+
+#tags{
+	padding: 5px 20px;
+}

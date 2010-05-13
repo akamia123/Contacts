@@ -1,0 +1,36 @@
+    <tr>
+        <td>First Name: </td>
+        <td><%= f.text_field :first_name, :size => 20 %></td>
+    </tr>
+    <tr>
+        <td>MI: </td>
+        <td><%= f.text_field :mi, :size => 2 %></td>
+    </tr>
+    <tr>
+        <td>Last Name: </td>
+        <td><%= f.text_field :last_name, :size => 20 %></td>
+    </tr>
+    <tr>
+        <td>Nickname: </td>
+        <td><%= f.text_field :nickname, :size => 20 %></td>
+    </tr>
+    <tr>
+        <td>Company: </td>
+        <td><%= f.select :company_id, companies, :selected => company_value, :include_blank => true %></td>
+    </tr>
+    <tr>
+        <td>Job Title: </td>
+        <td><%= f.text_field :job_title, :size => 20 %></td>
+    </tr>
+    <tr>
+        <td>Picture: </td>
+        <td><%= f.file_field :picture %></td>
+    </tr>
+    <tr>
+        <td>Tags: </td>
+        <td><%= f.text_field :skill_list %></td>
+    </tr>
+    <tr>
+        <td>Notes: </td>
+        <td><%= f.text_area :notes, :rows => 5, :cols => 35 %></td>
+    </tr>

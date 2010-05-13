@@ -1,0 +1,9 @@
+<% form_for :company, :url => company_url(@company), :html => {:multipart => true, :method => :put} do |f| %>
+    <table>
+        <%= render :partial => "form", :locals => {:f => f} %>
+        <tr>
+            <td></td>
+            <td><%= submit_tag "Update Company" %></td>
+        </tr>
+    </table>
+<% end %>

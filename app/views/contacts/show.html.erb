@@ -1,0 +1,23 @@
+<h2>
+    <%= "#{@contact.first_name} #{@contact.mi} #{@contact.last_name}" %>
+    <%= link_to image_tag("/images/edit.png"), edit_contact_url(@contact) %>
+</h2>
+<%= link_to @contact.company.name, company_url(@contact.company) %>
+<p>
+    <%= h(@contact.notes) %>
+</p>
+<p>
+    <strong>Skills: </strong><%= @contact.skills.join(", ") %>
+</p>
+<p>
+    <h4>Emails <%= link_to image_tag("/images/add.png"), new_contact_email_url(@contact.id) %></h4>
+    <%= render :partial => "emails", :object => @contact %>
+</p>
+<p>
+    <h4>Phone Numbers <%= link_to image_tag("/images/add.png"), new_contact_telephone_url(@contact.id) %></h4>
+    <%= render :partial => "phones", :object => @contact %>
+</p>
+<p>
+    <h4>Addresses <%= link_to image_tag("/images/add.png"), new_contact_address_url(@contact.id) %></h4>
+    <%= render :partial => "addresses", :object => @contact %>
+</p>

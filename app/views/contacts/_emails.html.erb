@@ -1,0 +1,18 @@
+<table class="contact" cellspacing="0">
+    <tr>
+        <th>Email</th>
+        <th>Type</th>
+        <th colspan="2"></th>
+    </tr>
+    <% for email in @contact.emails %>
+        <tr>
+            <td><%= link_to email.email, "mailto:#{email.email}" %></td>
+            <td><%= email.email_type %></td>
+            <td><%= link_to image_tag("/images/edit.png"), edit_contact_email_url(@contact.id, email.id)%></td>
+            <td>
+                <%= link_to image_tag("/images/cross.png"), contact_email_url(@contact.id, email.id), 
+                    :method => :delete, :confirm => "Are you sure you want to delete this email address?" %>
+            </td>
+        </tr>
+    <% end %>
+</table>

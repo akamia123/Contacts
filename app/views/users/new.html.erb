@@ -1,0 +1,34 @@
+<h2>Register</h2>
+<hr>
+<% form_for :user, :url => users_url(), :html => {:method => :post} do |f| %>
+    <table>
+        <tr>
+            <td>First Name: </td>
+            <td><%= f.text_field :first_name, :size => 20 %></td>
+        </tr>
+        <tr>
+            <td>MI: </td>
+            <td><%= f.text_field :mi, :size => 2 %></td>
+        </tr>
+        <tr>
+            <td>Last Name: </td>
+            <td><%= f.text_field :last_name, :size => 20 %></td>
+        </tr>
+        <tr>
+            <td>Email: </td>
+            <td><%= f.text_field :email, :size => 25 %></td>
+        </tr>
+        <tr>
+            <td>Password: </td>
+            <td><%= f.password_field :password, :size => 20 %></td>
+        </tr>
+        <tr>
+            <td>Confirm Password: </td>
+            <td><%= f.password_field :password_confirmation, :size => 20 %></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><%= submit_tag "Register" %></td>
+        </tr>
+    </table>
+<% end %>
