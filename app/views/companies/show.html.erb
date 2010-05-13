@@ -31,7 +31,7 @@
         <th>Nickname</th>
         <th>Job Title</th>
     </tr>
-    <% for contact in @company.contacts.by_user(@user.id) %>
+    <% for contact in @contacts %>
         <tr onmouseover="ChangeColor(this, true);"
             onmouseout="ChangeColor(this, false);"
             onclick="DoNav('<%= contact_url(contact.id) %>');">
@@ -42,6 +42,7 @@
             <td><%= contact.job_title %></td>
         </tr>
     <% end %>
+    <%= will_paginate(@contacts) %>
 </table>
 <script type="text/javascript">
     function ChangeColor(tableRow, highLight)
