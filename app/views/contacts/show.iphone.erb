@@ -2,16 +2,22 @@
     <%= link_to "Back", nil, :class => "back" %>
     <h1>Contact</h1>
 </div>
-<h2><%= "#{@contact.first_name} #{@contact.mi} #{@contact.last_name}" %></h2>
+<h1><%= "#{@contact.first_name} #{@contact.mi} #{@contact.last_name}" %></h1>
 <h2>Phone Numbers</h2>
 <ul>
 	<% for phone in @contact.telephones %>
-		<li><%= number_to_phone(phone.number) %></li>
+		<li>
+			<%= number_to_phone(phone.number, :area_code => true) %>
+			<small class="counter"><%= phone.phone_type %></small>
+		</li>
 	<% end %>
 </ul>
 <h2>Email Addresses</h2>
 <ul>
 	<% for email in @contact.emails %>
-		<li><%= email.email %></li>
+		<li>
+			<%= link_to email.email, "mailto:#{email.email}" %>
+			<small class="counter"><%= email.email_type %></small>
+		</li>
 	<% end %>
 </ul>
