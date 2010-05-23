@@ -49,6 +49,7 @@ class ContactsController < ApplicationController
     respond_to do |format|
       if @contact.save
         format.html {redirect_to contact_url(@contact)}
+        format.iphone {redirect_to contact_url(@contact)}
         format.xml  {render :xml => @contact}
       else
         format.html {render :action => "new"}
