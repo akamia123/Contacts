@@ -1,0 +1,17 @@
+<div class="toolbar">
+    <%= link_to "Back", nil, :class => "back" %>
+    <h1>Contact</h1>
+</div>
+<h2><%= "#{@contact.first_name} #{@contact.mi} #{@contact.last_name}" %></h2>
+<h2>Phone Numbers</h2>
+<ul>
+	<% for phone in @contact.telephones %>
+		<li><%= number_to_phone(phone.number) %></li>
+	<% end %>
+</ul>
+<h2>Email Addresses</h2>
+<ul>
+	<% for email in @contact.emails %>
+		<li><%= email.email %></li>
+	<% end %>
+</ul>
