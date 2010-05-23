@@ -3,12 +3,18 @@
     <h1><%= "New Contact" %></h1>
 </div>
 <% form_for :contact, :url => contacts_url(), :html => {:multipart => true, :method => :post } do |f| %>
+	<h2>Name</h2>
     <ul class="rounded">
         <li><%= f.text_field :first_name, :placeholder => "First Name" %></li>
         <li><%= f.text_field :mi, :placeholder => "MI" %></li>
         <li><%= f.text_field :last_name, :placeholder => "Last Name" %></li>
-        <li><%= f.select :company_id, companies, :selected => company_value, :placeholder => "Company", :include_blank => true %></li>
+        <li><%= f.text_field :nickname, :placeholder => "Nickname" %></li>
     </ul>
+	<h2>Company</h2>
+	<ul class="rounded">
+		<li><%= f.select :company_id, companies, :selected => company_value, :placeholder => "Company" %></li>
+		<li><%= f.text_field :job_title, :placeholder => "Job Title" %></li>
+	</ul>
     <%= link_to "Add Contact", "#", :class => "whiteButton submit" %>
 <% end %>
         
