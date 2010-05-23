@@ -7,7 +7,7 @@
 <ul>
 	<% for phone in @contact.telephones %>
 		<li>
-			<%= number_to_phone(phone.number, :area_code => true) %>
+			<%= link_to number_to_phone(phone.number, :area_code => true), "tel:#{phone.number}", :target => "_blank" %>
 			<small><%= phone.phone_type %></small>
 		</li>
 	<% end %>
@@ -16,7 +16,7 @@
 <ul>
 	<% for email in @contact.emails %>
 		<li>
-			<%= email.email %>
+			<%= link_to email.email, "mailto:#{email.email}", :target => "_blank" %>
 			<small><%= email.email_type %></small>
 		</li>
 	<% end %>
