@@ -1,13 +1,12 @@
 <div class="toolbar">
     <%= link_to "Back", nil, :class => "back" %>
-    <h1>Contact</h1>
+	<h1><%= "#{@contact.first_name} #{@contact.mi} #{@contact.last_name}" %></h1>
 </div>
-<h1><%= "#{@contact.first_name} #{@contact.mi} #{@contact.last_name}" %></h1>
 <h2>Phone Numbers</h2>
 <ul>
 	<% for phone in @contact.telephones %>
 		<li>
-			<%= number_to_phone(phone.number, :area_code => true) %>
+			<%= link_to number_to_phone(phone.number, :area_code => true), "" %>
 			<small class="counter"><%= phone.phone_type %></small>
 		</li>
 	<% end %>
