@@ -22,9 +22,9 @@ Rails::Initializer.run do |config|
   config.gem "acts-as-taggable-on", :source => "http://gemcutter.org"
   config.gem "thoughtbot-paperclip", :lib => "paperclip", :source => "http://gems.github.com"
   config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
-  config.gem 'thinking-sphinx', :lib => 'thinking_sphinx', :version => '~> 1.3.16'
-  config.gem 'riddle'
-  config.gem 'after_commit'
+  #config.gem 'thinking-sphinx', :lib => 'thinking_sphinx', :version => '~> 1.3.16'
+  #config.gem 'riddle'
+  #config.gem 'after_commit'
   #config.gem 'acts_as_ferret'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
