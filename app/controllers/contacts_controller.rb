@@ -22,6 +22,7 @@ class ContactsController < ApplicationController
     
     respond_to do |format|
       format.html
+      format.iphone
       format.xml {render :xml => @contact.to_xml(:include => [:emails, :telephones, :addresses])}
     end
   end
