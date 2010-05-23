@@ -1,5 +1,11 @@
 <h3>Results for <em><%= params[:contact_query] %></em></h3>
 <hr>
+<div id="pagination">
+    <%= will_paginate @contacts %>
+</div>
 <% for contact in @contacts %>
     <%= render :partial => "contact", :locals => {:contact => contact} %>
 <% end %>
+<div id="pagination">
+    <%= will_paginate @contacts %>
+</div>
