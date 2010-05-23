@@ -35,6 +35,10 @@ ActionController::Routing::Routes.draw do |map|
 
   # See how all your routes lay out with "rake routes"
   
+  map.search "/search", :controller => "users", :action => "search"
+  map.contact_search "/contacts/search", :controller => "contacts", :action => "search"
+  map.company_search "/companies/search", :controller => "companies", :action => "search"
+  
   map.resources :users
   map.resources :sessions
   map.resources :companies do |companies|

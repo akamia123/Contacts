@@ -1,0 +1,11 @@
+<div id="company">
+    <% if company.logo.exists? %>
+        <span style="float: right;">
+            <%= image_tag(company.logo(:small)) %>
+        </span>
+    <% end %>
+    <h3><%= link_to company.name, company_url(company.id) %></h3>
+    <strong>Number of Contacts: </strong>
+    <%= company.contacts.by_user(@user.id).count %>
+
+</div>

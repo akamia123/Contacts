@@ -1,0 +1,13 @@
+<div id="contact">
+    <h3 style="display: inline;">
+        <%= link_to "#{contact.last_name}, #{contact.first_name} #{contact.mi}".rstrip(), contact_url(contact.id) %>
+    </h3>
+    <%= "(#{contact.company.name})" %>
+    <p>
+        <strong>Job Title: </strong><%= contact.job_title %><br />
+        <strong>Skills: </strong>
+        <% for skill in contact.skills %>
+            <%= link_to skill, contacts_url(:tag => skill.name) %>
+        <% end %>
+    </p>
+</div>

@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
       if logged_in
         session[:user_id] = logged_in.id
         format.html {redirect_to root_url}
+        format.iphone {redirect_to root_url}
       else
         flash[:notice] = "Incorrect username/password!"
         format.html {redirect_to login_url()}

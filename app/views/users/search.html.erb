@@ -1,0 +1,9 @@
+<h2>Search</h2>
+<hr>
+<% form_tag contact_search_url(), :method => :get do %>
+    Contact Search: <%= text_field_tag "contact_query", nil, :size => 30 %><%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<% form_tag company_search_url(), :method => :get do %>
+    Company Search: <%= text_field_tag "company_query", nil, :size => 30 %><%= submit_tag "Search", :name => nil %>
+<% end %>

@@ -20,6 +20,15 @@ class CompaniesController < ApplicationController
     end
   end
   
+  def search
+    @companies = Company.search(params[:company_query])
+    
+    respond_to do |format|
+      format.html
+      format.xml {render :xml => @companies}
+    end
+  end
+  
   def new
     @company = Company.new()
   end

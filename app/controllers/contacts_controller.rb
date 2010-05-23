@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
   before_filter :authorize
   layout "default"
+  
   def index
     if params[:tag]
       @contacts = @user.contacts.tagged_with(params[:tag])
@@ -11,6 +12,7 @@ class ContactsController < ApplicationController
     
     respond_to do |format|
       format.html
+      format.iphone
       format.xml {render :xml => @contacts}
     end
   end
@@ -21,6 +23,15 @@ class ContactsController < ApplicationController
     respond_to do |format|
       format.html
       format.xml {render :xml => @contact.to_xml(:include => [:emails, :telephones, :addresses])}
+    end
+  end
+  
+  def search
+    @contacts = Contact.search(params[:contact_query])
+    
+    respond_to do |format|
+      format.html
+      format.xml {render :xml => @contacts}
     end
   end
   

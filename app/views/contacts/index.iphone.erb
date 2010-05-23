@@ -1,0 +1,10 @@
+<div class="toolbar">
+    <%= link_to "Back", nil, :class => "back" %>
+    <h1><%= "Contacts" %></h1>
+    <%= link_to "+", new_contact_url(), :class => "button add slideup" %>
+</div>
+<ul>
+    <% for contact in @contacts %>
+        <li class="arrow"><%= link_to "#{contact.last_name} #{contact.first_name} #{contact.mi}", contact_url(contact) %></li>
+    <% end %>
+</ul>

@@ -5,6 +5,14 @@ class Company < ActiveRecord::Base
   has_attached_file :logo, :styles => {:small => ["x50", :jpg], :medium => ["x100", :jpg]}
   acts_as_taggable
   
+  define_index do
+    indexes :name
+    indexes description
+    indexes [city, state], :as => :location
+    indexes stock_symbol
+  end
+  
+  
   validates_presence_of :name
   validates_presence_of :city
   validates_presence_of :state

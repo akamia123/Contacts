@@ -1,0 +1,5 @@
+<h3>Results for <em><%= params[:contact_query] %></em></h3>
+<hr>
+<% for contact in @contacts %>
+    <%= render :partial => "contact", :locals => {:contact => contact} %>
+<% end %>

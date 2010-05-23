@@ -1,0 +1,10 @@
+<div class="toolbar">
+    <h1><%= "Login" %></h1>
+</div>
+<% form_for :user, :url => sessions_url(), :html => {:class => "form", :method => :post} do |f| %>
+    <ul class="rounded">
+        <li><%= f.text_field :email, :placeholder => "Email" %></li>
+        <li><%= f.password_field :password, :placeholder => "Password" %></li>
+    </ul>
+    <%= submit_tag "Login", :class => "whiteButton" %>
+<% end %>

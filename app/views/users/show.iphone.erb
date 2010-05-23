@@ -1,0 +1,13 @@
+<div class="toolbar">
+    <h1><%= "#{@user.first_name} #{@user.last_name}" %></h1>
+</div>
+<ul>
+    <li class="arrow">
+        <%= link_to "Contacts", contacts_url() %>
+        <small class="counter"><%= @user.contacts.count %></small>
+    </li>
+    <li class="arrow">
+        <%= link_to "Companies", companies_url() %>
+        <small class="counter"><%= Company.count(:all) %></small>
+    </li>
+</ul>

@@ -1,0 +1,5 @@
+<h3>Results for <em><%= params[:company_query] %></em></h3>
+<hr>
+<% for company in @companies %>
+    <%= render :partial => "company", :locals => {:company => company} %>
+<% end %>
