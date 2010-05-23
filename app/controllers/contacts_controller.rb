@@ -27,7 +27,7 @@ class ContactsController < ApplicationController
   end
   
   def search
-    @contacts = Contact.search(params[:contact_query])
+    @contacts = Contact.search(params[:contact_query], :order => "last_name, first_name, mi")
     
     respond_to do |format|
       format.html
